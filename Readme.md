@@ -34,8 +34,6 @@
 	full_name();
     console.log('excuted after arthur.name()');
   });
-
-
 ```
 
 ## TODO
@@ -47,4 +45,8 @@
 
 ## License
 
-  WTFPL
+  [WTFPL](http://www.wtfpl.net)
+
+## Credits
+
+Built upon the lovely [coffeescript](http://coffeescript.org/) language

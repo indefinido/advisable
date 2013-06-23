@@ -1,4 +1,4 @@
-# TODO remove jquery dependence
+$ = require 'jquery' # TODO remove jquery dependence
 # TODO implement meld js interface
 
 advice =
@@ -23,24 +23,24 @@ advice =
 			res = orig.apply(@, args)
 			after.apply(@, args)
 
-
 			res
 		)
 
 mixin =
 	before: (method, advicer) ->
 		if typeof @[method] == 'function'
-			@[method] = advice.before @[method], advicer
+			return @[method] = advice.before @[method], advicer
+
 
 		throw new TypeError "Can only advice functions, attribute #{method} of #{@} is of type #{typeof @[method]}"
 	after: (method, advicer) ->
 		if typeof @[method] == 'function'
-			@[method] = advice.after @[method], advicer
+      return @[method] = advice.after @[method], advicer
 
 		throw new TypeError "Can only advice functions, attribute #{method} of #{@} is of type #{typeof @[method]}"
 	around: (method, advicer) ->
 		if typeof @[method] == 'function'
-			@[method] = advice.around @[method], advicer
+			return @[method] = advice.around @[method], advicer
 
 		throw new TypeError "Can only advice functions, attribute #{method} of #{@} is of type #{typeof @[method]}"
 
