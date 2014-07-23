@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "keywords": ["aspect", "aop", "mixin"],
   "dependencies": {
-    "components/jquery": "1.9.1"
+    "component/jquery": "*"
   },
   "development": {},
   "license": "WTFP",
